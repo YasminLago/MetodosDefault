@@ -11,6 +11,8 @@ package ejemplopolimorfismo;
  */
 public interface IAnimal {
     public abstract void falar();
-    
+    default public void moverse(){
+        System.out.println("Movese o animal");
+    }
     
 }

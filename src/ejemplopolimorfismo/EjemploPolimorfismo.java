@@ -20,17 +20,23 @@ public class EjemploPolimorfismo {
        ArrayList <Animal> listaAnimales = new ArrayList();
        Animal can = new Can("Kiara"," Palleiro");
        Animal gato = new Gato("Peludo"," negro");
+       
        listaAnimales.add(can);
        listaAnimales.add(gato);
+       
        for(Animal ani:listaAnimales)
             System.out.println(ani.toString());
+       
        for(Animal ani:listaAnimales){
            ani.falar();
+           ani.moverse();
            if(ani instanceof Can)
                ((Can)ani).andar();
-                       }
+        }
+       
         for(Animal ani:listaAnimales)
            falarPolimorfico(ani);
+        
         IAnimal canciño = new Can("Tobi","Pastor");
         System.out.println("*******");
         falarPolimorfico(canciño);
@@ -38,10 +44,17 @@ public class EjemploPolimorfismo {
         System.out.println(((Can)canciño).toString());
         Reloxo cuco = new ReloxoCuco();
         falarPolimorfico(cuco);
+        cuco.moverse();
         
         //Referenciando a la interfaz :
         IAnimal cuc = new ReloxoCuco();
         falarPolimorfico(cuc);
+        
+        
+        Cabalo cabalo = new Cabalo();
+        cabalo.falar();
+        cabalo.moverse();
+        cabalo.respirar();
         
         
     }
